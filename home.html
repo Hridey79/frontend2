@@ -1,0 +1,174 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog : Homepage</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css">
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="img/logo.png" class="logo" alt="">
+        <ul class="links-container">
+            <li class="link-item"><a href="home.html" class="link">home</a></li>
+            <li class="link-item"><a href="editor.html" class="link">editor</a></li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <div class="content">
+            <h1 class="heading">
+                <span class="small">welcome in the world of</span>
+                blog
+                <span class="no-fill">writing</span>
+            </h1>
+            <a href="editor.html" class="btn">write a blog</a>
+        </div>
+    </header>
+    <section class="blogs-section">
+    </section>
+    
+    <div class="blogs">
+        <div id =blog1 class="blog">
+            <h3 class="titlearea">
+                <!-- <h1>aaaaaaa</h1> -->
+            </h3>
+            <div class="dataarea">
+                amaklsmkldsnklds
+            </div>
+        </div>
+        <div class="blog">
+            <h3 class="titlearea">
+                <!-- <h1>aaaaaaa</h1> -->
+            </h3>
+            <div class="dataarea">
+                amaklsmkldsnklds
+            </div>
+        </div>
+        <div class="blog">
+            <h3 class="titlearea">
+                <!-- <h1>aaaaaaa</h1> -->
+            </h3>
+            <div class="dataarea">
+                amaklsmkldsnklds
+            </div>
+        </div>
+        <div class="blog">
+            <h3 class="titlearea">
+                <!-- <h1>aaaaaaa</h1> -->
+            </h3>
+            <div class="dataarea">
+                amaklsmkldsnklds
+            </div>
+        </div>
+        <div class="blog">
+            <h3 class="titlearea">
+                <!-- <h1>aaaaaaa</h1> -->
+            </h3>
+            <div class="dataarea">
+                amaklsmkldsnklds
+            </div>
+        </div>
+        <div class="blog">
+            <h3 class="titlearea">
+                <!-- <h1>aaaaaaa</h1> -->
+            </h3>
+            <div class="dataarea">
+                amaklsmkldsnklds
+            </div>
+        </div>
+        <div class="blog">
+            <h3 class="titlearea">
+                <!-- <h1>aaaaaaa</h1> -->
+            </h3>
+            <div class="dataarea">
+                amaklsmkldsnklds
+            </div>
+        </div>
+        <div class="blog">
+            <h3 class="titlearea">
+                <!-- <h1>aaaaaaa</h1> -->
+            </h3>
+            <div class="dataarea">
+                amaklsmkldsnklds
+            </div>
+        </div>
+        <div class="blog">
+            <h3 class="titlearea">
+                <!-- <h1>aaaaaaa</h1> -->
+            </h3>
+            <div class="dataarea">
+                amaklsmkldsnklds
+            </div>
+        </div>
+        <div class="blog">
+            <h3 class="titlearea">
+                <!-- <h1>aaaaaaa</h1> -->
+            </h3>
+            <div class="dataarea">
+                <!-- amaklsmkldsnklds -->
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="contactUs">
+            Contact Us:
+                +919216484509
+        </div> 
+        <div class="footer_blogs">
+           <h3>Blogs</h3>
+            <div>
+                <li>Food Blogs</li>
+                <li>Fashion Blogs</li>
+                <li>Travel Blogs</li>
+                <li>Tech Blogs</li>
+                <li>Gaming Blogs</li>
+                
+            </div>
+        </div>
+        <div class="footer_blogs">
+                <h3>Blogs</h3>
+                <div>
+                    <li>Movie Blogs</li>
+                    <li>Literature Blogs</li>
+                    <li>Medical Blogs</li>
+                    <li>Education Blogs</li>
+                    <li>Politics Blogs</li>
+                    
+                </div>
+         </div>
+    </div>
+    </div>
+    <script src="js/editor.js"></script>
+    <script>
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                const blogs=document.getElementsByClassName('dataarea');
+                
+                if (this.readyState == 4 && this.status == 200) {
+                    const x=JSON.parse(this.responseText);
+                    
+                    const divs=document.getElementsByClassName('titlearea')
+                    for(let i=0;i<divs.length;i++){
+                        console.log(divs[i])
+                        divs[i].innerHTML=  x[i].title
+                        blogs[i].innerHTML=x[i].body
+                    }
+              }
+            };
+            xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts?utm_source=Mailerlite&utm_medium=E-mail&utm_campaign=Test%20Series&utm_term=2022-08-09", true);
+            xhttp.send();
+          }
+
+          window.onload=loadDoc()
+    </script>
+    
+</body>
+</html>
