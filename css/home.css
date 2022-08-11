@@ -149,7 +149,7 @@ body{
 .dataarea{
     border-bottom:10px #1b1b1b;
     max-height: 180px;
-    overflow: hidden;
+    overflow: scroll;
     margin-bottom: 5px;
     /* border-bottom: 10px solid black; */
 }
