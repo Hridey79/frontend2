@@ -33,8 +33,8 @@
     <section class="blogs-section">
     </section>
     
-    <div class="blogs">
-        <div id =blog1 class="blog">
+    <div id ="blogtable" class="blogs blog_table">
+        <div class="blog">
             <h3 class="titlearea">
                 <!-- <h1>aaaaaaa</h1> -->
             </h3>
@@ -118,7 +118,11 @@
 
     <div class="footer">
         <div class="contactUs">
+            Got Any Questions?
+            <br/>
+            <br/>
             Contact Us:
+            <br/>
                 +919216484509
         </div> 
         <div class="footer_blogs">
@@ -157,7 +161,7 @@
                     
                     const divs=document.getElementsByClassName('titlearea')
                     for(let i=0;i<divs.length;i++){
-                        console.log(divs[i])
+                        
                         divs[i].innerHTML=  x[i].title
                         blogs[i].innerHTML=x[i].body
                     }
@@ -169,6 +173,7 @@
 
           window.onload=loadDoc()
     </script>
+    <script src="js/editor.js"></script>
     
 </body>
 </html>
